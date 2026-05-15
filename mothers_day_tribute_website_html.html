@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Mother's Day - Dr. Nisha Gupta</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom, #fff7f0, #ffe8e8, #fff0f5);
+      overflow-x: hidden;
+      color: #5b2c35;
+    }
+
+    .floating-hearts::before,
+    .floating-hearts::after {
+      content: '❤';
+      position: fixed;
+      color: rgba(255, 105, 180, 0.25);
+      animation: float 10s linear infinite;
+      font-size: 2rem;
+      z-index: 0;
+    }
+
+    .floating-hearts::before {
+      left: 10%;
+      top: 100%;
+    }
+
+    .floating-hearts::after {
+      left: 80%;
+      top: 100%;
+      animation-delay: 5s;
+    }
+
+    @keyframes float {
+      from {
+        transform: translateY(0);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(-120vh);
+        opacity: 1;
+      }
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
+      position: relative;
+      background: radial-gradient(circle at center, rgba(255,215,0,0.15), transparent 70%);
+    }
+
+    .hero-content {
+      max-width: 900px;
+      z-index: 2;
+      animation: fadeIn 2s ease;
+    }
+
+    .date {
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+      color: #b54769;
+      font-weight: 600;
+    }
+
+    h1 {
+      font-size: 4rem;
+      color: #8b1e3f;
+      margin-bottom: 20px;
+      font-family: 'Dancing Script', cursive;
+    }
+
+    .subtitle {
+      font-size: 1.3rem;
+      line-height: 1.8;
+      margin-bottom: 30px;
+    }
+
+    .mom-photo {
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 10px solid rgba(255,255,255,0.7);
+      box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+      animation: pulse 3s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.03); }
+      100% { transform: scale(1); }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    section {
+      padding: 80px 20px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 50px;
+      color: #8b1e3f;
+      font-family: 'Dancing Script', cursive;
+    }
+
+    .memory-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .memory-card {
+      background: rgba(255,255,255,0.55);
+      backdrop-filter: blur(12px);
+      border-radius: 25px;
+      padding: 30px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      transition: 0.4s ease;
+      text-align: center;
+    }
+
+    .memory-card:hover {
+      transform: translateY(-10px) scale(1.02);
+    }
+
+    .memory-card .icon {
+      font-size: 3rem;
+      margin-bottom: 15px;
+    }
+
+    .memory-card h3 {
+      margin-bottom: 10px;
+      color: #8b1e3f;
+    }
+
+    .video-container {
+      max-width: 900px;
+      margin: auto;
+      border-radius: 30px;
+      overflow: hidden;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+      border: 5px solid rgba(255,255,255,0.5);
+    }
+
+    video {
+      width: 100%;
+      display: block;
+    }
+
+    .play-button {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 14px 30px;
+      background: linear-gradient(to right, #d63384, #ff758c);
+      color: white;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .play-button:hover {
+      transform: scale(1.05);
+    }
+
+    .letter {
+      max-width: 900px;
+      margin: auto;
+      background: rgba(255,255,255,0.7);
+      padding: 50px;
+      border-radius: 30px;
+      line-height: 2;
+      font-size: 1.15rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      position: relative;
+    }
+
+    .letter::before {
+      content: '💌';
+      position: absolute;
+      top: -25px;
+      left: 30px;
+      font-size: 3rem;
+    }
+
+    .promise {
+      text-align: center;
+      max-width: 900px;
+      margin: auto;
+      font-size: 1.3rem;
+      line-height: 2;
+      background: linear-gradient(to right, rgba(255,255,255,0.6), rgba(255,240,245,0.8));
+      padding: 50px;
+      border-radius: 30px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    }
+
+    footer {
+      text-align: center;
+      padding: 50px 20px;
+      background: #8b1e3f;
+      color: white;
+      font-size: 1.2rem;
+    }
+
+    .heart {
+      animation: heartbeat 1.5s infinite;
+      display: inline-block;
+    }
+
+    @keyframes heartbeat {
+      0% { transform: scale(1); }
+      25% { transform: scale(1.2); }
+      50% { transform: scale(1); }
+      75% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+
+    @media(max-width:768px) {
+      h1 {
+        font-size: 2.8rem;
+      }
+
+      .mom-photo {
+        width: 240px;
+        height: 240px;
+      }
+
+      .letter {
+        padding: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="floating-hearts"></div>
+
+<section class="hero">
+  <div class="hero-content">
+    <div class="date">Happy Mother's Day • 10 May 2026 ❤️</div>
+    <h1>To My World, My Mom</h1>
+    <p class="subtitle">
+      Dr. Nisha Gupta<br>
+      Doing all chores, excelling in everything, and smiling as always.
+    </p>
+
+    <!-- Replace with your mother's real image -->
+    <img src="Mom photo.png" alt="Dr. Nisha Gupta" class="mom-photo">
+  </div>
+</section>
+
+<section>
+  <h2 class="section-title">Beautiful Memories ✨</h2>
+
+  <div class="memory-grid">
+    <div class="memory-card">
+      <div class="icon">👩‍🏫</div>
+      <h3>Principal of School</h3>
+      <p>A strong leader who inspires everyone around her.</p>
+    </div>
+
+    <div class="memory-card">
+      <div class="icon">👑</div>
+      <h3>Boss Lady</h3>
+      <p>Handling every responsibility gracefully and fearlessly.</p>
+    </div>
+
+    <div class="memory-card">
+      <div class="icon">🏡</div>
+      <h3>Neck of the Family</h3>
+      <p>The strength and balance of our entire home.</p>
+    </div>
+
+    <div class="memory-card">
+      <div class="icon">🧵</div>
+      <h3>Sarees & Watches</h3>
+      <p>Elegant, classy, and beautiful in every style.</p>
+    </div>
+
+    <div class="memory-card">
+      <div class="icon">🍲</div>
+      <h3>Loves to Cook</h3>
+      <p>Your food tastes like love and comfort.</p>
+    </div>
+
+    <div class="memory-card">
+      <div class="icon">🫶</div>
+      <h3>My Safe Place</h3>
+      <p>Whenever you are there, I feel safe and homely.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2 class="section-title">A Song For Mom 🎵</h2>
+
+  <div class="video-container">
+    <!-- Replace with your uploaded video -->
+    <video controls>
+      <source src="Mothers Day 2026 Animated.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <div style="text-align:center;">
+    <a class="play-button" href="#">Play for Mom ❤️</a>
+  </div>
+</section>
+
+<section>
+  <h2 class="section-title">My Promise To You 🚁</h2>
+
+  <div class="promise">
+    One day, I will take you to Ayodhya Ram Mandir in a helicopter so you can visit peacefully the whole day. ✨<br><br>
+
+    I will always protect you.<br>
+    Just call me once, and I’ll be there in a second. ❤️
+  </div>
+</section>
+
+<section>
+  <h2 class="section-title">A Letter To Mom 💌</h2>
+
+  <div class="letter">
+    Mommy, I love you beyond words.<br><br>
+
+    Sometimes I hurt you unknowingly, but please know that my heart is always with you. I miss you a lot. You are my safest place, my comfort, my home.
+
+    <br><br>
+
+    When you smile, the whole world feels beautiful. When you scold me, I still feel loved. Whenever someone disturbs you, I feel protective because you mean everything to me.
+
+    <br><br>
+
+    Thank you for doing every little thing silently while carrying the entire family with strength and love.
+
+    <br><br>
+
+    Mom… you are my world. ❤️
+  </div>
+</section>
+
+<footer>
+  Mom… You are my world ❤️<br><br>
+  Happy Mother's Day – 10 May 2026 <span class="heart">❤️</span>
+</footer>
+
+</body>
+</html>
